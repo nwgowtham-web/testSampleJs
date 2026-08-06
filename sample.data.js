@@ -1,0 +1,36 @@
+export const sampleData = {
+  "source": "https://filesamples.com/samples/code/html/sample2.html",
+  "title": "Enter a title, displayed at the top of the window.",
+  "heading": "Enter the main heading, usually the same as the title.",
+  "paragraphs": [
+    "Be bold in stating your key points. Put them in a list:",
+    "Improve your image by including an image.",
+    "Add a link to your favorite Web site. Break up your page with a horizontal rule or two.",
+    "Finally, link to another page in your own Web site.",
+    "© Wiley Publishing, 2011"
+  ],
+  "lists": [
+    [
+      "The first item in your list",
+      "The second item; italicize key words"
+    ]
+  ],
+  "links": [
+    {
+      "href": "https://www.dummies.com/",
+      "text": "Web site"
+    },
+    {
+      "href": "page2.html",
+      "text": "another page"
+    }
+  ],
+  "images": [
+    {
+      "src": "http://www.mygifs.com/CoverImage.gif",
+      "alt": "A Great HTML Resource"
+    }
+  ],
+  "plainText": "Enter the main heading, usually the same as the title. Be bold in stating your key points. Put them in a list: The first item in your list The second item; italicize key words Improve your image by including an image. Add a link to your favorite Web site . Break up your page with a horizontal rule or two. Finally, link to another page in your own Web site. © Wiley Publishing, 2011",
+  "cleanHtmlPath": "sample.clean.html"
+};
