@@ -1004,6 +1004,38 @@ h2 {
   padding-left: 50px;
 }
 
+.contact-box .reach-company {
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0 0 8px;
+  max-width: none;
+}
+
+.contact-box .reach-location {
+  color: #d7ebff;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 18px;
+  max-width: none;
+}
+
+.contact-box .reach-person {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 6px;
+  max-width: none;
+}
+
+.contact-box .reach-person span {
+  color: #b5efff;
+  font-weight: 500;
+}
+
 .contact-box p {
   color: #cee0dc;
   line-height: 1.65;
