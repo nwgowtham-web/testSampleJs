@@ -1,21 +1,74 @@
+const PRODUCT_CATEGORIES = {
+  "flow-meter": {
+    name: "Flow Meter",
+    products: [
+      "Supcon Electro Magnetic Flow Meter",
+      "Flange Remote Head 89 Electromagnetic Flow Meter",
+      "Vortex Flow Meter",
+    ],
+  },
+  "paperless-recorder": {
+    name: "Paperless Recorder",
+    products: [
+      "Supcon R 5000 Paperless Recorder",
+      "Supcon R1000 Laboratory Paperless Recorder",
+    ],
+  },
+  "dcs-panel": {
+    name: "DCS Panel",
+    products: ["5000 KVA Control JX300 DCS Panel", "Dcs Control Panel"],
+  },
+  "pressure-transmitter": {
+    name: "Pressure Transmitter",
+    products: ["Transmitter Module", "30 VDC Pressure Transmitter"],
+  },
+  "radar-level-transmitter": {
+    name: "Radar Level Transmitter",
+    products: ["Radar Level Transmitter"],
+  },
+  "temperature-controller": {
+    name: "Temperature Controller",
+    products: ["Temperature Controller Batch Control System"],
+  },
+  "source-meter": {
+    name: "Source Meter",
+    products: ["Supcon X229 Source Meter"],
+  },
+};
+
 const MODULES = {
   broker: {
     title: "Broker",
     description:
-      "Review broker accounts, commissions, and partner activity from this workspace.",
-    stat: "128",
+      "Browse broker product categories for metering, recording, and transmitter sales.",
+    categories: [
+      "flow-meter",
+      "paperless-recorder",
+      "pressure-transmitter",
+      "radar-level-transmitter",
+    ],
   },
   customer: {
     title: "Customer",
     description:
-      "Browse customer profiles, service history, and open requests in one place.",
-    stat: "2,450",
+      "Explore customer-facing instruments for flow, level, temperature, and pressure.",
+    categories: [
+      "flow-meter",
+      "radar-level-transmitter",
+      "temperature-controller",
+      "pressure-transmitter",
+    ],
   },
   "service-provider": {
     title: "Service Provider",
     description:
-      "Coordinate provider coverage, availability, and assigned service jobs.",
-    stat: "64",
+      "Review service-provider equipment for DCS panels, source meters, and control systems.",
+    categories: [
+      "dcs-panel",
+      "source-meter",
+      "temperature-controller",
+      "paperless-recorder",
+    ],
   },
 };
 
@@ -27,7 +80,7 @@ const logoutBtn = document.getElementById("logout-btn");
 const userChip = document.getElementById("user-chip");
 const moduleTitle = document.getElementById("module-title");
 const moduleDescription = document.getElementById("module-description");
-const moduleStat = document.getElementById("module-stat");
+const categoryGrid = document.getElementById("category-grid");
 const modulePanel = document.getElementById("module-panel");
 const menuItems = document.querySelectorAll(".menu-item");
 const menuToggle = document.getElementById("menu-toggle");
@@ -64,16 +117,54 @@ function showApp(email) {
   selectModule("broker");
 }
 
+function renderCategories(categoryIds) {
+  categoryGrid.innerHTML = categoryIds
+    .map((id) => {
+      const category = PRODUCT_CATEGORIES[id];
+      if (!category) return "";
+
+      const productsHtml = category.products
+        .map(
+          (product) => `
+            <li>
+              <button
+                type="button"
+                class="text-left text-sm text-leaf-800 transition hover:text-leaf-600"
+              >
+                ${product}
+              </button>
+            </li>`
+        )
+        .join("");
+
+      return `
+        <article class="min-w-0">
+          <h3 class="font-display text-base font-semibold text-leaf-950">
+            ${category.name}
+          </h3>
+          <ul class="mt-3 space-y-2">
+            ${productsHtml}
+          </ul>
+          <button
+            type="button"
+            class="mt-3 text-sm font-medium text-leaf-600 transition hover:text-leaf-800"
+          >
+            ...more
+          </button>
+        </article>`;
+    })
+    .join("");
+}
+
 function selectModule(key) {
   const module = MODULES[key];
   if (!module) return;
 
   moduleTitle.textContent = module.title;
   moduleDescription.textContent = module.description;
-  moduleStat.textContent = module.stat;
+  renderCategories(module.categories);
 
   modulePanel.classList.remove("animate-slide-in");
-  // Force reflow so the animation can replay
   void modulePanel.offsetWidth;
   modulePanel.classList.add("animate-slide-in");
 
