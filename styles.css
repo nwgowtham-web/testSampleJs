@@ -573,73 +573,204 @@ h2 {
   position: relative;
 }
 
-.power-cable span,
-.control-cable span,
-.specialty-cable span {
-  background: #1e4f47;
-  border: 5px solid #617c76;
-  border-radius: 50%;
-  height: 85px;
+.flow-meter span {
+  background: linear-gradient(135deg, #d9ddd8, #737e7a);
+  border-radius: 4px;
+  height: 45px;
+  left: 24%;
   position: absolute;
-  width: 85px;
+  top: 78px;
+  width: 52%;
 }
 
-.power-cable span::after,
-.control-cable span::after,
-.specialty-cable span::after {
-  background: #d06f37;
-  border: 6px dotted #f0b66d;
+.flow-meter span:first-child,
+.flow-meter span:nth-child(4) {
+  border: 8px solid #77847f;
+  border-radius: 50%;
+  height: 100px;
+  left: 32%;
+  top: 28px;
+  width: 100px;
+  z-index: 2;
+}
+
+.flow-meter span:first-child::after {
+  background: conic-gradient(var(--mint) 0 36%, #153a35 36% 100%);
+  border: 9px solid #173e38;
   border-radius: 50%;
   content: "";
-  inset: 15px;
+  inset: 8px;
   position: absolute;
 }
 
-.power-cable span:nth-child(1) { left: 18%; top: 28px; }
-.power-cable span:nth-child(2) { right: 17%; top: 36px; }
-.power-cable span:nth-child(3) { bottom: 13px; left: 27%; }
-.power-cable span:nth-child(4) { bottom: 8px; right: 9%; }
-.control-cable span:nth-child(1) { left: 15%; top: 45px; }
-.control-cable span:nth-child(2) { left: 40%; top: 88px; }
-.control-cable span:nth-child(3) { right: 9%; top: 37px; }
-.specialty-cable span:nth-child(1) { left: 7%; top: 60px; }
-.specialty-cable span:nth-child(2) { left: 37%; top: 30px; }
-.specialty-cable span:nth-child(3) { right: 5%; top: 78px; }
+.flow-meter span:nth-child(2) { left: 11%; width: 28%; }
+.flow-meter span:nth-child(3) { left: auto; right: 11%; width: 28%; }
+.flow-meter span:nth-child(4) { height: 35px; left: 41%; top: 132px; width: 58px; }
 
-.control-cable span,
-.specialty-cable span {
-  background: #d7d9d2;
-  border-color: #8b9792;
-}
-
-.specialty-cable span::after {
-  background: #5579a1;
-  border-color: #a8c6e3;
-}
-
-.accessories span {
-  background: linear-gradient(90deg, #777, #d6d6cd 45%, #787a76);
-  height: 72px;
+.recorder span:first-child,
+.dcs-panel span:first-child,
+.temperature-controller span:first-child,
+.source-meter span:first-child {
+  background: linear-gradient(145deg, #cfd4cf, #7b8580);
+  border: 4px solid #68736e;
+  border-radius: 5px;
+  height: 125px;
+  left: 20%;
   position: absolute;
-  top: 60px;
-  transform: rotate(-25deg);
-  width: 135px;
+  top: 36px;
+  width: 60%;
 }
 
-.accessories span::before {
-  background: repeating-linear-gradient(90deg, #464a47 0 4px, #9a9d97 4px 8px);
+.recorder span:nth-child(2),
+.temperature-controller span:nth-child(2),
+.source-meter span:nth-child(2) {
+  background: #153a35;
+  box-shadow: inset 0 0 0 3px #263f3b;
+  height: 64px;
+  left: 27%;
+  position: absolute;
+  top: 52px;
+  width: 46%;
+}
+
+.recorder span:nth-child(2)::after,
+.source-meter span:nth-child(2)::after {
+  background: linear-gradient(135deg, transparent 48%, var(--mint) 49% 52%, transparent 53%);
   content: "";
-  height: 30px;
-  left: -20px;
+  inset: 8px;
   position: absolute;
-  top: 21px;
-  width: 30px;
 }
 
-.accessories span:nth-child(2) {
-  left: 45%;
-  top: 105px;
-  transform: rotate(150deg) scale(0.78);
+.recorder span:nth-child(3),
+.source-meter span:nth-child(3) {
+  background: var(--mint);
+  border-radius: 50%;
+  height: 10px;
+  left: 30%;
+  position: absolute;
+  top: 133px;
+  width: 10px;
+}
+
+.dcs-panel span:first-child {
+  height: 155px;
+  left: 29%;
+  top: 20px;
+  width: 43%;
+}
+
+.dcs-panel span:nth-child(2) {
+  background: #132e2a;
+  box-shadow: inset 0 0 0 4px #314b46;
+  height: 48px;
+  left: 34%;
+  position: absolute;
+  top: 40px;
+  width: 33%;
+}
+
+.dcs-panel span:nth-child(3) {
+  background: repeating-linear-gradient(90deg, #bce957 0 5px, transparent 5px 18px);
+  height: 7px;
+  left: 36%;
+  position: absolute;
+  top: 111px;
+  width: 29%;
+}
+
+.pressure-transmitter span:first-child {
+  background: linear-gradient(90deg, #68736f, #e0e2dc 50%, #6c7773);
+  border: 5px solid #697671;
+  border-radius: 50%;
+  height: 105px;
+  left: 31%;
+  position: absolute;
+  top: 32px;
+  width: 105px;
+}
+
+.pressure-transmitter span:first-child::after {
+  background: #143b35;
+  border: 7px solid #98a39e;
+  border-radius: 50%;
+  content: "";
+  inset: 13px;
+  position: absolute;
+}
+
+.pressure-transmitter span:nth-child(2) {
+  background: repeating-linear-gradient(90deg, #5c6662 0 4px, #c5c9c3 4px 8px);
+  height: 60px;
+  left: 44%;
+  position: absolute;
+  top: 133px;
+  width: 34px;
+}
+
+.radar-transmitter span {
+  background: linear-gradient(90deg, #68746f, #d8dcd5 50%, #68746f);
+  left: 43%;
+  position: absolute;
+  width: 42px;
+}
+
+.radar-transmitter span:first-child {
+  border-radius: 7px;
+  height: 65px;
+  top: 26px;
+}
+
+.radar-transmitter span:nth-child(2) {
+  height: 62px;
+  top: 87px;
+}
+
+.radar-transmitter span:nth-child(3) {
+  border-radius: 50% 50% 12px 12px;
+  height: 48px;
+  left: 28%;
+  top: 135px;
+  width: 42%;
+}
+
+.radar-transmitter span:nth-child(3)::after {
+  border: 2px solid var(--mint);
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0;
+  content: "";
+  height: 20px;
+  left: 12%;
+  position: absolute;
+  top: 35px;
+  width: 76%;
+}
+
+.temperature-controller span:first-child {
+  background: #273f3b;
+  border-color: #82908a;
+  height: 118px;
+  left: 26%;
+  top: 38px;
+  width: 48%;
+}
+
+.temperature-controller span:nth-child(2) {
+  background: var(--mint);
+  box-shadow: 40px 0 0 #de7540, 0 38px 0 #61736d, 40px 38px 0 #61736d;
+  height: 13px;
+  left: 34%;
+  top: 73px;
+  width: 24px;
+}
+
+.source-meter span:first-child {
+  left: 16%;
+  width: 68%;
+}
+
+.source-meter span:nth-child(2) {
+  left: 23%;
+  width: 54%;
 }
 
 .product-card-copy {
