@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SL enterprises Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              leaf: {
+                50: "#f3faf4",
+                100: "#e3f5e7",
+                200: "#c5e9cd",
+                300: "#96d6a4",
+                400: "#5fba74",
+                500: "#3a9d52",
+                600: "#2a7f40",
+                700: "#236535",
+                800: "#1f512d",
+                900: "#1a4326",
+                950: "#0c2514",
+              },
+              moss: {
+                400: "#7cb88a",
+                500: "#4f9460",
+                700: "#2f5f3c",
+              },
+            },
+            fontFamily: {
+              display: ['"Fraunces"', "Georgia", "serif"],
+              sans: ['"Manrope"', "ui-sans-serif", "sans-serif"],
+            },
+            keyframes: {
+              fadeUp: {
+                "0%": { opacity: "0", transform: "translateY(18px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              drift: {
+                "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+                "50%": { transform: "translate(12px, -10px) scale(1.05)" },
+              },
+              slideIn: {
+                "0%": { opacity: "0", transform: "translateX(-12px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+            },
+            animation: {
+              "fade-up": "fadeUp 0.7s ease-out both",
+              "fade-up-delay": "fadeUp 0.7s ease-out 0.15s both",
+              "fade-up-late": "fadeUp 0.7s ease-out 0.3s both",
+              drift: "drift 12s ease-in-out infinite",
+              "slide-in": "slideIn 0.35s ease-out both",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .leaf-mesh {
+        background:
+          radial-gradient(ellipse 80% 60% at 10% 20%, rgba(96, 186, 116, 0.35), transparent 55%),
+          radial-gradient(ellipse 70% 50% at 90% 10%, rgba(42, 127, 64, 0.28), transparent 50%),
+          radial-gradient(ellipse 60% 70% at 70% 90%, rgba(31, 81, 45, 0.4), transparent 55%),
+          linear-gradient(160deg, #0c2514 0%, #1a4326 45%, #236535 100%);
+      }
+
+      .panel-glow {
+        box-shadow: 0 0 0 1px rgba(197, 233, 205, 0.12), 0 24px 60px rgba(12, 37, 20, 0.45);
+      }
+
+      .menu-active {
+        background: linear-gradient(90deg, rgba(95, 186, 116, 0.22), transparent);
+        border-left-color: #5fba74;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-leaf-50 antialiased">
+    <!-- LOGIN VIEW -->
+    <section id="login-view" class="relative min-h-screen overflow-hidden leaf-mesh">
+      <div
+        class="pointer-events-none absolute -left-16 top-24 h-72 w-72 animate-drift rounded-full bg-leaf-400/20 blur-3xl"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="pointer-events-none absolute bottom-10 right-0 h-96 w-96 animate-drift rounded-full bg-leaf-600/25 blur-3xl"
+        style="animation-delay: -4s"
+        aria-hidden="true"
+      ></div>
+
+      <div class="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-16 lg:px-10">
+        <div class="max-w-xl animate-fade-up">
+          <p class="font-display text-5xl font-bold tracking-tight text-leaf-100 sm:text-6xl md:text-7xl">
+            SL enterprises
+          </p>
+          <h1 class="mt-5 max-w-md font-display text-2xl font-medium leading-snug text-leaf-200 sm:text-3xl">
+            Sign in to manage brokers, customers, and service partners.
+          </h1>
+          <p class="mt-4 max-w-sm text-base text-leaf-300/90">
+            A calm green workspace for your portal modules.
+          </p>
+        </div>
+
+        <form
+          id="login-form"
+          class="panel-glow mt-12 w-full max-w-md animate-fade-up-delay rounded-2xl border border-leaf-300/15 bg-leaf-950/55 p-8 backdrop-blur-md"
+          novalidate
+        >
+          <label class="block text-sm font-medium text-leaf-200" for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="username"
+            required
+            placeholder="you@company.com"
+            class="mt-2 w-full rounded-xl border border-leaf-400/25 bg-leaf-900/60 px-4 py-3 text-leaf-50 outline-none transition placeholder:text-leaf-400/60 focus:border-leaf-400 focus:ring-2 focus:ring-leaf-400/30"
+          />
+
+          <label class="mt-5 block text-sm font-medium text-leaf-200" for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            placeholder="Enter your password"
+            class="mt-2 w-full rounded-xl border border-leaf-400/25 bg-leaf-900/60 px-4 py-3 text-leaf-50 outline-none transition placeholder:text-leaf-400/60 focus:border-leaf-400 focus:ring-2 focus:ring-leaf-400/30"
+          />
+
+          <p id="login-error" class="mt-3 hidden text-sm text-red-300" role="alert"></p>
+
+          <button
+            type="submit"
+            class="mt-7 w-full rounded-xl bg-leaf-500 px-4 py-3 text-sm font-semibold tracking-wide text-leaf-950 transition hover:bg-leaf-400 focus:outline-none focus:ring-2 focus:ring-leaf-300 focus:ring-offset-2 focus:ring-offset-leaf-950"
+          >
+            Sign in
+          </button>
+
+          <p class="mt-4 text-center text-xs text-leaf-400">
+            Demo: any email and password will work
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- APP VIEW (after login) -->
+    <section id="app-view" class="hidden min-h-screen bg-leaf-50 text-leaf-950">
+      <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside
+          id="sidebar"
+          class="fixed inset-y-0 left-0 z-40 flex w-64 -translate-x-full flex-col border-r border-leaf-200 bg-leaf-900 text-leaf-50 transition-transform duration-300 lg:static lg:translate-x-0"
+        >
+          <div class="border-b border-leaf-700/60 px-6 py-6">
+            <p class="font-display text-2xl font-bold tracking-tight text-leaf-100">SL enterprises</p>
+            <p class="mt-1 text-xs text-leaf-400">Portal modules</p>
+          </div>
+
+          <nav class="flex-1 space-y-1 px-3 py-5" aria-label="Main">
+            <button
+              type="button"
+              data-module="broker"
+              class="menu-item menu-active flex w-full items-center gap-3 rounded-r-lg border-l-4 border-leaf-400 px-4 py-3 text-left text-sm font-medium text-leaf-100 transition hover:bg-leaf-800/70"
+            >
+              <span class="inline-block h-2 w-2 rounded-full bg-leaf-400"></span>
+              Broker
+            </button>
+            <button
+              type="button"
+              data-module="customer"
+              class="menu-item flex w-full items-center gap-3 rounded-r-lg border-l-4 border-transparent px-4 py-3 text-left text-sm font-medium text-leaf-300 transition hover:bg-leaf-800/70 hover:text-leaf-100"
+            >
+              <span class="inline-block h-2 w-2 rounded-full bg-leaf-600"></span>
+              Customer
+            </button>
+            <button
+              type="button"
+              data-module="service-provider"
+              class="menu-item flex w-full items-center gap-3 rounded-r-lg border-l-4 border-transparent px-4 py-3 text-left text-sm font-medium text-leaf-300 transition hover:bg-leaf-800/70 hover:text-leaf-100"
+            >
+              <span class="inline-block h-2 w-2 rounded-full bg-leaf-600"></span>
+              Service Provider
+            </button>
+          </nav>
+
+          <div class="border-t border-leaf-700/60 px-4 py-4">
+            <button
+              id="logout-btn"
+              type="button"
+              class="w-full rounded-xl border border-leaf-600/50 px-4 py-2.5 text-sm font-medium text-leaf-200 transition hover:border-leaf-400 hover:bg-leaf-800 hover:text-leaf-50"
+            >
+              Sign out
+            </button>
+          </div>
+        </aside>
+
+        <!-- Overlay for mobile sidebar -->
+        <div
+          id="sidebar-overlay"
+          class="fixed inset-0 z-30 hidden bg-leaf-950/50 backdrop-blur-sm lg:hidden"
+          aria-hidden="true"
+        ></div>
+
+        <!-- Main content -->
+        <div class="flex min-h-screen flex-1 flex-col">
+          <header class="sticky top-0 z-20 flex items-center justify-between border-b border-leaf-200 bg-leaf-50/90 px-4 py-4 backdrop-blur sm:px-8">
+            <div class="flex items-center gap-3">
+              <button
+                id="menu-toggle"
+                type="button"
+                class="rounded-lg border border-leaf-200 px-3 py-2 text-sm font-medium text-leaf-800 lg:hidden"
+                aria-label="Open menu"
+              >
+                Menu
+              </button>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-leaf-500">Module</p>
+                <h2 id="module-title" class="font-display text-xl font-semibold text-leaf-900 sm:text-2xl">
+                  Broker
+                </h2>
+              </div>
+            </div>
+            <p id="user-chip" class="truncate text-sm text-leaf-600"></p>
+          </header>
+
+          <main class="flex-1 px-4 py-8 sm:px-8">
+            <div id="module-panel" class="animate-slide-in max-w-6xl">
+              <p id="module-description" class="max-w-2xl text-base leading-relaxed text-leaf-700">
+                Browse broker product categories for metering, recording, and transmitter sales.
+              </p>
+
+              <div
+                id="category-grid"
+                class="mt-10 grid gap-x-10 gap-y-12 sm:grid-cols-2 xl:grid-cols-4"
+              ></div>
+
+              <div class="mt-10 border-t border-leaf-200 pt-6">
+                <button
+                  type="button"
+                  class="text-sm font-semibold text-leaf-600 transition hover:text-leaf-800"
+                >
+                  View all categories →
+                </button>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
