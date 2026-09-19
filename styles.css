@@ -1,14 +1,14 @@
 :root {
-  --ink: #0a2045;
-  --ink-deep: #04132f;
-  --teal: #176fe5;
-  --mint: #54d7ff;
-  --cream: #edf5ff;
-  --paper: #f8fbff;
-  --line: rgba(20, 73, 145, 0.16);
-  --muted: #5e708b;
-  --blue-gradient: linear-gradient(135deg, #0a3f9f 0%, #137be8 52%, #27b9ed 100%);
-  --deep-gradient: linear-gradient(135deg, #061a3c 0%, #0a3d87 58%, #0b69b8 100%);
+  --ink: #103d2b;
+  --ink-deep: #08291c;
+  --teal: #15803d;
+  --mint: #86efac;
+  --cream: #edf8f0;
+  --paper: #f8fcf9;
+  --line: rgba(32, 132, 82, 0.16);
+  --muted: #587064;
+  --green-gradient: linear-gradient(135deg, #166534 0%, #15803d 52%, #22a06b 100%);
+  --deep-gradient: linear-gradient(135deg, #062b1d 0%, #105638 58%, #147d4b 100%);
 }
 
 * {
@@ -34,7 +34,7 @@ a {
 
 .site-header {
   align-items: center;
-  background: rgba(248, 251, 255, 0.93);
+  background: rgba(249, 254, 252, 0.93);
   border-bottom: 1px solid var(--line);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -57,9 +57,9 @@ a {
 
 .brand-mark {
   align-items: center;
-  background: var(--blue-gradient);
+  background: var(--green-gradient);
   border-radius: 11px;
-  box-shadow: 0 8px 20px rgba(23, 111, 229, 0.22);
+  box-shadow: 0 8px 20px rgba(44, 208, 126, 0.22);
   display: flex;
   height: 42px;
   justify-content: center;
@@ -139,9 +139,9 @@ a {
 
 .header-cta {
   align-items: center;
-  background: var(--blue-gradient);
+  background: var(--green-gradient);
   border-radius: 6px;
-  box-shadow: 0 8px 22px rgba(23, 111, 229, 0.2);
+  box-shadow: 0 8px 22px rgba(44, 208, 126, 0.2);
   color: white;
   display: flex;
   font-size: 12px;
@@ -165,9 +165,9 @@ a {
 
 .hero {
   background:
-    radial-gradient(circle at 82% 28%, rgba(84, 215, 255, 0.2), transparent 27%),
-    radial-gradient(circle at 15% 92%, rgba(89, 139, 255, 0.14), transparent 31%),
-    linear-gradient(135deg, #f8fbff 0%, #edf5ff 53%, #e5f2ff 100%);
+    radial-gradient(circle at 82% 28%, rgba(101, 238, 170, 0.2), transparent 27%),
+    radial-gradient(circle at 15% 92%, rgba(106, 238, 172, 0.14), transparent 31%),
+    linear-gradient(135deg, #f8fcf9 0%, #edf8f0 53%, #e8fcf2 100%);
   min-height: 760px;
   overflow: hidden;
   padding: 84px 5vw 0;
@@ -176,8 +176,8 @@ a {
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(23, 111, 229, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(23, 111, 229, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(44, 208, 126, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(44, 208, 126, 0.06) 1px, transparent 1px);
   background-size: 56px 56px;
   inset: 84px 0 0 0;
   mask-image: linear-gradient(to right, black, transparent 78%);
@@ -232,7 +232,7 @@ h2 em {
 }
 
 .hero-content > p {
-  color: #526985;
+  color: #57806c;
   font-size: 17px;
   line-height: 1.7;
   max-width: 570px;
@@ -262,9 +262,9 @@ h2 em {
 }
 
 .button-primary {
-  background: var(--blue-gradient);
+  background: var(--green-gradient);
   border-radius: 6px;
-  box-shadow: 0 12px 26px rgba(23, 111, 229, 0.22);
+  box-shadow: 0 12px 26px rgba(44, 208, 126, 0.22);
   color: white;
 }
 
@@ -297,7 +297,7 @@ h2 em {
 }
 
 .hero-orbit {
-  border: 1px solid rgba(23, 111, 229, 0.18);
+  border: 1px solid rgba(44, 208, 126, 0.18);
   border-radius: 50%;
   position: absolute;
 }
@@ -317,7 +317,7 @@ h2 em {
 }
 
 .cable {
-  border: 28px solid #0c3977;
+  border: 28px solid #176c42;
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-radius: 50%;
@@ -328,7 +328,7 @@ h2 em {
 }
 
 .cable::before {
-  border: 5px solid #69b9f4;
+  border: 5px solid #77e6af;
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-radius: 50%;
@@ -353,10 +353,10 @@ h2 em {
 
 .cable-end {
   align-items: center;
-  background: #071b3d;
-  border: 10px solid #69a9dc;
+  background: #0c3822;
+  border: 10px solid #74d1a3;
   border-radius: 50%;
-  box-shadow: 0 22px 50px rgba(8, 49, 109, 0.3);
+  box-shadow: 0 22px 50px rgba(18, 99, 59, 0.3);
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
@@ -371,7 +371,7 @@ h2 em {
 }
 
 .cable-end::after {
-  border: 3px dashed #81bee9;
+  border: 3px dashed #8bdfb5;
   border-radius: 50%;
   content: "";
   inset: -19px;
@@ -379,26 +379,26 @@ h2 em {
 }
 
 .cable-end span {
-  background: #247dd2;
-  border: 4px solid #7ccfff;
+  background: #35c17b;
+  border: 4px solid #89f2be;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 4px #0a4c9a;
+  box-shadow: inset 0 0 0 4px #188c52;
   height: 33px;
   width: 33px;
 }
 
 .cable-end span:first-child {
   background: var(--mint);
-  border-color: #d6f6ff;
+  border-color: #dafbeb;
 }
 
 .spec-chip {
   align-items: center;
   background: rgba(255, 255, 255, 0.92);
   bottom: 90px;
-  border: 1px solid rgba(23, 111, 229, 0.1);
+  border: 1px solid rgba(44, 208, 126, 0.1);
   border-radius: 8px;
-  box-shadow: 0 12px 35px rgba(23, 74, 140, 0.14);
+  box-shadow: 0 12px 35px rgba(35, 128, 82, 0.14);
   display: flex;
   gap: 13px;
   padding: 14px 21px;
@@ -425,7 +425,7 @@ h2 em {
 
 .pulse {
   background: var(--mint);
-  border: 5px solid #d9f7ff;
+  border: 5px solid #ddfbec;
   border-radius: 50%;
   height: 18px;
   width: 18px;
@@ -552,8 +552,8 @@ h2 {
 
 .products {
   background:
-    radial-gradient(circle at 100% 0, rgba(84, 215, 255, 0.16), transparent 30%),
-    linear-gradient(145deg, #eaf3ff, #f4f8ff);
+    radial-gradient(circle at 100% 0, rgba(101, 238, 170, 0.16), transparent 30%),
+    linear-gradient(145deg, #ecfdf4, #f5fefa);
 }
 
 .products-heading {
@@ -576,9 +576,9 @@ h2 {
 
 .product-card {
   background: rgba(255, 255, 255, 0.86);
-  border: 1px solid rgba(23, 111, 229, 0.08);
+  border: 1px solid rgba(44, 208, 126, 0.08);
   border-radius: 10px;
-  box-shadow: 0 12px 35px rgba(20, 68, 130, 0.07);
+  box-shadow: 0 12px 35px rgba(31, 119, 75, 0.07);
   min-height: 410px;
   overflow: hidden;
   padding: 23px;
@@ -631,8 +631,8 @@ h2 {
 }
 
 .flow-meter span:first-child::after {
-  background: conic-gradient(var(--mint) 0 36%, #0b3672 36% 100%);
-  border: 9px solid #0b3e81;
+  background: conic-gradient(var(--mint) 0 36%, #15683f 36% 100%);
+  border: 9px solid #177546;
   border-radius: 50%;
   content: "";
   inset: 8px;
@@ -660,8 +660,8 @@ h2 {
 .recorder span:nth-child(2),
 .temperature-controller span:nth-child(2),
 .source-meter span:nth-child(2) {
-  background: #092e61;
-  box-shadow: inset 0 0 0 3px #1c4e88;
+  background: #125835;
+  box-shadow: inset 0 0 0 3px #277d52;
   height: 64px;
   left: 27%;
   position: absolute;
@@ -696,8 +696,8 @@ h2 {
 }
 
 .dcs-panel span:nth-child(2) {
-  background: #092e61;
-  box-shadow: inset 0 0 0 4px #27568b;
+  background: #125835;
+  box-shadow: inset 0 0 0 4px #318159;
   height: 48px;
   left: 34%;
   position: absolute;
@@ -726,7 +726,7 @@ h2 {
 }
 
 .pressure-transmitter span:first-child::after {
-  background: #0b3e79;
+  background: #166e42;
   border: 7px solid #98a39e;
   border-radius: 50%;
   content: "";
@@ -782,7 +782,7 @@ h2 {
 }
 
 .temperature-controller span:first-child {
-  background: #103d73;
+  background: #1a6942;
   border-color: #82908a;
   height: 118px;
   left: 26%;
@@ -847,7 +847,7 @@ h2 {
 
 .industries {
   background:
-    radial-gradient(circle at 18% 25%, rgba(70, 182, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 18% 25%, rgba(88, 237, 163, 0.18), transparent 30%),
     var(--deep-gradient);
   color: white;
 }
@@ -864,7 +864,7 @@ h2 {
 }
 
 .industries h2 em {
-  color: #a7e9ff;
+  color: #b0f6d3;
 }
 
 .industries-layout > div > p {
@@ -918,17 +918,17 @@ h2 {
 
 .reach-map {
   background:
-    radial-gradient(circle at center, rgba(84, 215, 255, 0.2), transparent 52%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='380' viewBox='0 0 600 380'%3E%3Cg fill='none' stroke='%23176fe5' stroke-width='1.2' opacity='.24'%3E%3Cpath d='M45 82l51-38 74 12 28 32 46-15 38 28-19 41 35 31-18 44 23 38-45 59-61-13-41 25-68-34-34-61 26-42-27-47z'/%3E%3Cpath d='M301 80l57-19 68 31 51-8 65 40-11 38 42 30-36 40-10 59-73 10-47 40-41-50-46-15 19-65-35-41 26-38z'/%3E%3Cpath d='M322 140l28-21 23 15-6 31 34 14 9 40-41 17-39-29 17-26z'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+    radial-gradient(circle at center, rgba(101, 238, 170, 0.2), transparent 52%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='380' viewBox='0 0 600 380'%3E%3Cg fill='none' stroke='%2315803d' stroke-width='1.2' opacity='.24'%3E%3Cpath d='M45 82l51-38 74 12 28 32 46-15 38 28-19 41 35 31-18 44 23 38-45 59-61-13-41 25-68-34-34-61 26-42-27-47z'/%3E%3Cpath d='M301 80l57-19 68 31 51-8 65 40-11 38 42 30-36 40-10 59-73 10-47 40-41-50-46-15 19-65-35-41 26-38z'/%3E%3Cpath d='M322 140l28-21 23 15-6 31 34 14 9 40-41 17-39-29 17-26z'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
   height: 410px;
   position: relative;
 }
 
 .map-dot {
   background: var(--mint);
-  border: 4px solid rgba(84, 215, 255, 0.3);
+  border: 4px solid rgba(101, 238, 170, 0.3);
   border-radius: 50%;
-  box-shadow: 0 0 0 8px rgba(84, 215, 255, 0.12);
+  box-shadow: 0 0 0 8px rgba(101, 238, 170, 0.12);
   height: 12px;
   position: absolute;
   width: 12px;
@@ -981,8 +981,8 @@ h2 {
 .contact {
   align-items: end;
   background:
-    radial-gradient(circle at 80% 15%, rgba(84, 215, 255, 0.23), transparent 30%),
-    var(--blue-gradient);
+    radial-gradient(circle at 80% 15%, rgba(101, 238, 170, 0.23), transparent 30%),
+    var(--green-gradient);
   color: white;
   display: grid;
   gap: 8%;
@@ -996,7 +996,7 @@ h2 {
 }
 
 .contact h2 em {
-  color: #b5efff;
+  color: #bcf8da;
 }
 
 .contact-box {
@@ -1015,7 +1015,7 @@ h2 {
 }
 
 .contact-box .reach-location {
-  color: #d7ebff;
+  color: #dbfbeb;
   font-size: 16px;
   line-height: 1.5;
   margin: 0 0 18px;
@@ -1032,7 +1032,7 @@ h2 {
 }
 
 .contact-box .reach-person span {
-  color: #b5efff;
+  color: #bcf8da;
   font-weight: 500;
 }
 
@@ -1063,7 +1063,7 @@ h2 {
 
 footer {
   align-items: center;
-  background: linear-gradient(120deg, #03112b, #092b5e);
+  background: linear-gradient(120deg, #072717, #115634);
   color: white;
   display: grid;
   gap: 30px;
@@ -1072,7 +1072,7 @@ footer {
 }
 
 .footer-brand .brand-mark {
-  background: var(--blue-gradient);
+  background: var(--green-gradient);
 }
 
 footer > p {
