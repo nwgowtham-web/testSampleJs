@@ -1,0 +1,13 @@
+{
+  "name": "sl-enterprises-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static marketing website for SL enterprises (industrial instrumentation & automation).",
+  "scripts": {
+    "dev": "http-server . -p 8080 -a 0.0.0.0 -c-1",
+    "start": "http-server . -p 8080 -a 0.0.0.0 -c-1"
+  },
+  "devDependencies": {
+    "http-server": "14.1.1"
+  }
+}
